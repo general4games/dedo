@@ -24,6 +24,8 @@ export const OPTIONAL_KEYS = [
     // construction, so without this a correct alias reports as 20 defects and
     // buries a real one.
     "alias_of",
+    // Additional optional firmware-specific keys
+    "k_kl_lock", "wk_CSSFontFace_vtable", "k_getpid", "wk___imp_strerror", "c_strerror",
 ];
 
 export const PS4 = {
@@ -312,7 +314,8 @@ export const PS4 = {
 
         k_kl_lock:                          0xe6c20,
 
-        k_evf_cv:                           0x0,
+        // EVF_OFFSET is 0 because netctrl does not use it, which matches k_evf_cv below
+        k_evf_cv:                           0x0,      // unused by poops
         k_sysent_661:                       0x110a760,
         k_jmp_rsi:                          0x47b31,
     },
